@@ -1,2 +1,7 @@
 parameters:
     level: 8
+    ignoreErrors:
+        -
+            identifier: phpDoc.parseError
+        -
+            identifier: instanceof.alwaysTrue
