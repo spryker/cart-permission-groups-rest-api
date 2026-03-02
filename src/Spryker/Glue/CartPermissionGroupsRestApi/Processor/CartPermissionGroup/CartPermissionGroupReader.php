@@ -25,10 +25,6 @@ class CartPermissionGroupReader implements CartPermissionGroupReaderInterface
      */
     protected $cartPermissionGroupResponseBuilder;
 
-    /**
-     * @param \Spryker\Glue\CartPermissionGroupsRestApi\Dependency\Client\CartPermissionGroupsRestApiToSharedCartClientInterface $sharedCartClient
-     * @param \Spryker\Glue\CartPermissionGroupsRestApi\Processor\ResponseBuilder\CartPermissionGroupResponseBuilderInterface $cartPermissionGroupResponseBuilder
-     */
     public function __construct(
         CartPermissionGroupsRestApiToSharedCartClientInterface $sharedCartClient,
         CartPermissionGroupResponseBuilderInterface $cartPermissionGroupResponseBuilder
@@ -37,9 +33,6 @@ class CartPermissionGroupReader implements CartPermissionGroupReaderInterface
         $this->cartPermissionGroupResponseBuilder = $cartPermissionGroupResponseBuilder;
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function getCartPermissionGroupList(): RestResponseInterface
     {
         $quotePermissionGroupResponseTransfer = $this->sharedCartClient->getQuotePermissionGroupList(
@@ -55,11 +48,6 @@ class CartPermissionGroupReader implements CartPermissionGroupReaderInterface
         );
     }
 
-    /**
-     * @param int $idCartPermissionGroup
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function findCartPermissionGroupById(int $idCartPermissionGroup): RestResponseInterface
     {
         $quotePermissionGroupResponseTransfer = $this->sharedCartClient->findQuotePermissionGroupById(

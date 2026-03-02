@@ -19,9 +19,6 @@ abstract class AbstractCartPermissionGroupResourceRelationshipExpander implement
      */
     protected $cartPermissionGroupResponseBuilder;
 
-    /**
-     * @param \Spryker\Glue\CartPermissionGroupsRestApi\Processor\ResponseBuilder\CartPermissionGroupResponseBuilderInterface $cartPermissionGroupResponseBuilder
-     */
     public function __construct(CartPermissionGroupResponseBuilderInterface $cartPermissionGroupResponseBuilder)
     {
         $this->cartPermissionGroupResponseBuilder = $cartPermissionGroupResponseBuilder;
@@ -48,10 +45,5 @@ abstract class AbstractCartPermissionGroupResourceRelationshipExpander implement
         }
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceInterface $resource
-     *
-     * @return \Generated\Shared\Transfer\QuotePermissionGroupTransfer|null
-     */
     abstract protected function findQuotePermissionGroupTransferInPayload(RestResourceInterface $resource): ?QuotePermissionGroupTransfer;
 }

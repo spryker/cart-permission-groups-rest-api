@@ -21,11 +21,6 @@ class CartPermissionGroupsRestApiDependencyProvider extends AbstractBundleDepend
      */
     public const CLIENT_SHARED_CART = 'CLIENT_SHARED_CART';
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -34,11 +29,6 @@ class CartPermissionGroupsRestApiDependencyProvider extends AbstractBundleDepend
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addSharedCartClient(Container $container): Container
     {
         $container->set(static::CLIENT_SHARED_CART, function (Container $container) {

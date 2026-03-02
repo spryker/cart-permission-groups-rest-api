@@ -26,21 +26,11 @@ class CartPermissionGroupsRestApiToSharedCartClientBridge implements CartPermiss
         $this->sharedCartClient = $sharedCartClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuotePermissionGroupCriteriaFilterTransfer $criteriaFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuotePermissionGroupResponseTransfer
-     */
     public function getQuotePermissionGroupList(QuotePermissionGroupCriteriaFilterTransfer $criteriaFilterTransfer): QuotePermissionGroupResponseTransfer
     {
         return $this->sharedCartClient->getQuotePermissionGroupList($criteriaFilterTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuotePermissionGroupTransfer $quotePermissionGroupTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuotePermissionGroupResponseTransfer
-     */
     public function findQuotePermissionGroupById(QuotePermissionGroupTransfer $quotePermissionGroupTransfer): QuotePermissionGroupResponseTransfer
     {
         return $this->sharedCartClient->findQuotePermissionGroupById($quotePermissionGroupTransfer);

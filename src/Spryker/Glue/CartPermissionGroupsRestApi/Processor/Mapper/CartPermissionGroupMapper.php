@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\RestCartPermissionGroupsAttributesTransfer;
 
 class CartPermissionGroupMapper implements CartPermissionGroupMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuotePermissionGroupTransfer $quotePermissionGroupTransfer
-     * @param \Generated\Shared\Transfer\RestCartPermissionGroupsAttributesTransfer $restCartPermissionGroupsAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestCartPermissionGroupsAttributesTransfer
-     */
     public function mapQuotePermissionGroupTransferToRestCartPermissionGroupsAttributesTransfer(
         QuotePermissionGroupTransfer $quotePermissionGroupTransfer,
         RestCartPermissionGroupsAttributesTransfer $restCartPermissionGroupsAttributesTransfer

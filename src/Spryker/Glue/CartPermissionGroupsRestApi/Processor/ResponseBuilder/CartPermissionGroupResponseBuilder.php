@@ -30,10 +30,6 @@ class CartPermissionGroupResponseBuilder implements CartPermissionGroupResponseB
      */
     protected $restResourceBuilder;
 
-    /**
-     * @param \Spryker\Glue\CartPermissionGroupsRestApi\Processor\Mapper\CartPermissionGroupMapperInterface $cartPermissionGroupMapper
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $restResourceBuilder
-     */
     public function __construct(
         CartPermissionGroupMapperInterface $cartPermissionGroupMapper,
         RestResourceBuilderInterface $restResourceBuilder
@@ -42,9 +38,6 @@ class CartPermissionGroupResponseBuilder implements CartPermissionGroupResponseB
         $this->restResourceBuilder = $restResourceBuilder;
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createEmptyCartPermissionGroupsResponse(): RestResponseInterface
     {
         return $this->restResourceBuilder->createRestResponse();
@@ -66,22 +59,12 @@ class CartPermissionGroupResponseBuilder implements CartPermissionGroupResponseB
         return $restResponse;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuotePermissionGroupTransfer $quotePermissionGroupTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createCartPermissionGroupsResponse(QuotePermissionGroupTransfer $quotePermissionGroupTransfer): RestResponseInterface
     {
         return $this->createEmptyCartPermissionGroupsResponse()
             ->addResource($this->createCartPermissionGroupsResource($quotePermissionGroupTransfer));
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuotePermissionGroupTransfer $quotePermissionGroupTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceInterface
-     */
     public function createCartPermissionGroupsResource(QuotePermissionGroupTransfer $quotePermissionGroupTransfer): RestResourceInterface
     {
         $cartPermissionGroupRestResource = $this->restResourceBuilder->createRestResource(
@@ -97,9 +80,6 @@ class CartPermissionGroupResponseBuilder implements CartPermissionGroupResponseB
         return $cartPermissionGroupRestResource;
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createCartPermissionGroupNotFoundErrorResponse(): RestResponseInterface
     {
         $errorMessageTransfer = $this->createErrorMessage(
@@ -112,13 +92,6 @@ class CartPermissionGroupResponseBuilder implements CartPermissionGroupResponseB
             ->addError($errorMessageTransfer);
     }
 
-    /**
-     * @param string $code
-     * @param int $status
-     * @param string $detail
-     *
-     * @return \Generated\Shared\Transfer\RestErrorMessageTransfer
-     */
     protected function createErrorMessage(string $code, int $status, string $detail): RestErrorMessageTransfer
     {
         return (new RestErrorMessageTransfer())
