@@ -1,0 +1,33 @@
+resource:
+    name: CartPermissionGroups
+    shortName: cart-permission-groups
+    description: 'Permission groups granted to company users on shared carts'
+
+    paginationEnabled: false
+
+    includableIn:
+        - resource: Carts
+          relationshipName: cart-permission-groups
+
+    properties:
+        idQuotePermissionGroup:
+            type: integer
+            identifier: true
+            writable: false
+            readable: true
+            required: false
+            description: 'Internal id used as resource identifier'
+
+        name:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Permission group name (READ_ONLY, FULL_ACCESS).'
+
+        isDefault:
+            type: boolean
+            writable: false
+            readable: true
+            required: false
+            description: 'Whether this is the default permission group.'
