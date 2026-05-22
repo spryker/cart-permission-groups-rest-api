@@ -5,10 +5,6 @@ resource:
 
     paginationEnabled: false
 
-    includableIn:
-        - resource: Carts
-          relationshipName: cart-permission-groups
-
     properties:
         idQuotePermissionGroup:
             type: integer
