@@ -1,9 +1,37 @@
 resource:
     name: CartPermissionGroups
     shortName: cart-permission-groups
-    description: 'Permission groups granted to company users on shared carts'
+    description: 'Cart permission groups for shared carts'
+
+    provider: Spryker\Glue\CartPermissionGroupsRestApi\Api\Storefront\Provider\CartPermissionGroupsStorefrontProvider
+    processor: ~
+
+    security: "is_granted('ROLE_CUSTOMER')"
 
     paginationEnabled: false
+
+    operations:
+        - type: GetCollection
+          name: getCartPermissionGroups
+          description: 'Retrieve all cart permission groups'
+          openapiContext:
+              responses:
+                  200:
+                      description: 'Cart permission group collection returned.'
+                  401:
+                      description: 'Missing access token.'
+
+        - type: Get
+          name: getCartPermissionGroup
+          description: 'Retrieve a cart permission group by ID'
+          openapiContext:
+              responses:
+                  200:
+                      description: 'Cart permission group returned.'
+                  401:
+                      description: 'Missing access token.'
+                  404:
+                      description: 'Cart permission group not found.'
 
     properties:
         idQuotePermissionGroup:
@@ -12,18 +40,24 @@ resource:
             writable: false
             readable: true
             required: false
-            description: 'Internal id used as resource identifier'
-
-        name:
-            type: string
-            writable: false
-            readable: true
-            required: false
-            description: 'Permission group name (READ_ONLY, FULL_ACCESS).'
+            description: 'Cart permission group identifier'
+            openapiContext:
+                example: 1
 
         isDefault:
             type: boolean
             writable: false
             readable: true
             required: false
-            description: 'Whether this is the default permission group.'
+            description: 'Whether this is the default permission group'
+            openapiContext:
+                example: true
+
+        name:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Permission group name'
+            openapiContext:
+                example: 'READ_ONLY'
