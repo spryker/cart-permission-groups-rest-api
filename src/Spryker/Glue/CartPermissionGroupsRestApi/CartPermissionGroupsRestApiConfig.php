@@ -12,21 +12,29 @@ use Spryker\Glue\Kernel\AbstractBundleConfig;
 class CartPermissionGroupsRestApiConfig extends AbstractBundleConfig
 {
     /**
+     * @api
+     *
      * @var string
      */
     public const RESOURCE_CART_PERMISSION_GROUPS = 'cart-permission-groups';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const CONTROLLER_CART_PERMISSION_GROUPS = 'cart-permission-groups-resource';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_CART_PERMISSION_GROUP_NOT_FOUND = '2501';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_DETAIL_CART_PERMISSION_GROUP_NOT_FOUND = 'Cart permission group not found.';
