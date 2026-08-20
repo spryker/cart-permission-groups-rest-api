@@ -19,6 +19,8 @@ resource:
                   200:
                       description: 'Cart permission group collection returned.'
                   401:
+                      description: 'Invalid access token.'
+                  403:
                       description: 'Missing access token.'
 
         - type: Get
@@ -29,6 +31,8 @@ resource:
                   200:
                       description: 'Cart permission group returned.'
                   401:
+                      description: 'Invalid access token.'
+                  403:
                       description: 'Missing access token.'
                   404:
                       description: 'Cart permission group not found.'
