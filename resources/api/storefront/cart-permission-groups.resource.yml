@@ -24,6 +24,9 @@ resource:
                       description: 'Missing access token.'
 
         - type: Get
+          extraProperties:
+              notFoundCode: '2501'
+              notFoundMessage: 'Cart permission group not found.'
           name: getCartPermissionGroup
           description: 'Retrieve a cart permission group by ID'
           openapiContext:
