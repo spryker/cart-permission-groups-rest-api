@@ -13,6 +13,8 @@
 
     <transfer name="QuotePermissionGroup">
         <property name="idQuotePermissionGroup" type="int"/>
+        <property name="name" type="string"/>
+        <property name="isDefault" type="bool"/>
     </transfer>
 
     <transfer name="Quote">
